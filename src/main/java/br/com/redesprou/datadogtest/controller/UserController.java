@@ -7,6 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import br.com.redesprou.datadogtest.model.User;
 import br.com.redesprou.datadogtest.service.UserService;
+import io.opentracing.Span;
+import io.opentracing.Tracer;
+import io.opentracing.util.GlobalTracer;
 
 import java.util.List;
 
@@ -19,6 +22,8 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<List<User>> getAllUsers() {
+      final Span span = GlobalTracer.get().activeSpan();
+      span.setTag("customer.id", "12345678");
         List<User> users = userService.getAllUsers();
         return new ResponseEntity<>(users, HttpStatus.OK);
     }
