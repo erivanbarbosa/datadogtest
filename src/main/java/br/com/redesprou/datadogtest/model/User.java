@@ -11,8 +11,6 @@ public class User {
         this.email = email;
     }
 
-    // Getters and setters for the properties
-
     public int getId() {
         return id;
     }

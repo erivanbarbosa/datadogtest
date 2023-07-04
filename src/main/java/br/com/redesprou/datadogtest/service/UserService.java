@@ -36,7 +36,6 @@ public class UserService {
             User user = existingUser.get();
             user.setName(updatedUser.getName());
             user.setEmail(updatedUser.getEmail());
-            // Update other fields as needed
             return Optional.of(user);
         }
         return Optional.empty();
@@ -52,8 +51,6 @@ public class UserService {
     }
 
     private int generateUniqueId() {
-        // Generate a unique ID using your preferred method
-        // This is just a basic example, you might use UUID or database-generated IDs in a real application
         return users.size() + 1;
     }
 }

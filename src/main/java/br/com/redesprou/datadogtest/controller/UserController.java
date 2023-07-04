@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import br.com.redesprou.datadogtest.model.User;
 import br.com.redesprou.datadogtest.service.UserService;
 import io.opentracing.Span;
-import io.opentracing.Tracer;
 import io.opentracing.util.GlobalTracer;
 
 import java.util.List;
